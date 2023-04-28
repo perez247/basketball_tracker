@@ -1,0 +1,5 @@
+<app-team-selection (teamSelected)="addTeam($event)" ></app-team-selection>
+
+<section class="item-container">
+  <app-team-item (remove)="removeTeam($event)" *ngFor="let selectedTeam of selectedTeams" [team]="selectedTeam"></app-team-item>
+</section>

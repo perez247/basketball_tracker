@@ -1,0 +1,29 @@
+<section>
+  <h4>{{team?.full_name}} [{{team?.abbreviation}}]</h4>
+  <small>{{team?.conference}} Conference</small>
+  <hr/>
+  <p>Result of past 12 days:</p>
+  <div>
+    <ng-container *ngIf="isLoadingSecond; then loading else results"></ng-container>
+
+    <ng-template #results>
+      <div *ngFor="let teamResult of teamResults">
+        <strong>{{ teamResult.home_team.abbreviation }} </strong><span>{{ teamResult.home_team_score }}</span>
+        -
+        <strong>{{ teamResult.visitor_team.abbreviation }} </strong><span>{{ teamResult.visitor_team_score }}</span>
+      </div>
+    </ng-template>
+
+    <ng-template #loading>
+      Loading...
+    </ng-template>
+  </div>
+
+  <a
+  [routerLink]="'/'"
+  id="backBtn"
+  class="btn btn-success"
+  >
+    << Back to all team stats
+  </a>
+</section>

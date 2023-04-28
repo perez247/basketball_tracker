@@ -1,0 +1,25 @@
+section {
+  background-color: rgb(228, 228, 228);
+  width: 300px;
+  padding: 10px;
+  margin: 20px 20px 0 0;
+  position: relative;
+}
+
+img {
+  width: 150px;
+}
+
+.result-card {
+  display: flex;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.removeBtn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+}

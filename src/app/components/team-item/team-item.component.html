@@ -1,0 +1,38 @@
+<section>
+  <h3>{{team?.full_name}} [{{team?.abbreviation}}]</h3>
+  <small>{{team?.conference}} Conference</small>
+
+  <button [id]="'remove'+ team?.abbreviation" class="removeBtn" (click)="removeItem()" >X</button>
+
+  <div class="result-card">
+    <ng-container *ngIf="isLoading; then loading else results"></ng-container>
+
+    <ng-template #results>
+      <div>
+          <p>Result of past 12 days</p>
+          <div class="outcome-wrapper">
+            <span *ngFor="let teamResult of teamResults" class="outcome" appGameOutcome [team]="team" [teamResult]="teamResult"></span>
+          </div>
+          <p>Avg pts scored: <strong>{{teamResults | avgPoints}}</strong></p>
+          <p>Avg pts conceded: <strong>{{teamResults | avgPoints : 'conceded'}}</strong></p>
+      </div>
+      <div>
+        <img [src]="'https://interstate21.com/nba-logos/' + team?.abbreviation + '.png'" alt="team logo">
+      </div>
+    </ng-template>
+
+    <ng-template #loading>
+      Loading...
+    </ng-template>
+
+  </div>
+
+  <a
+  [routerLink]="'/results/' +  team?.id"
+  [id]="'results'+ team?.abbreviation"
+  class="btn btn-success"
+  >
+    See game results >>
+  </a>
+
+</section>

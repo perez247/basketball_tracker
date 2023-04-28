@@ -1,0 +1,15 @@
+
+<section>
+  <form>
+    <div>
+      <select name="teamSelection" id="teamSelect" [(ngModel)]="selected">
+        <option [ngValue]="undefined">---</option>
+        <option *ngFor="let team of teams" [ngValue]="team">{{team.full_name}}</option>
+      </select>
+      <button id="trackBtn" class="btn btn-primary" (click)="selectTeam()" [disabled]="!selected">
+        {{ isLoading ? 'Loading...' : 'Track Team' }}
+      </button>
+    </div>
+  </form>
+</section>
+

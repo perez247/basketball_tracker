@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+
+.btn {
+  padding: 10px;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-success {
+  background-color: #308732 !important;
+}
+
+.btn-primary {
+  background-color: #1976D2 !important;
+}
+
+.outcome {
+  padding: 4px;
+  margin: 5px 5px 5px 0px;
+  border-radius: 20px;
+}
+
+.outcome-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
